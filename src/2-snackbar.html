@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="./css/2-snackbar.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <a class="back-link" href="./index.html">Go back</a>
+            <h1 class="main-title">
+                <span class="main-title-gradient">Welcome</span> to Snackbar
+            </h1>
+        </div>
+
+        <form class="form">
+            <label>
+                Delay (ms)
+                <input class="input-delay" type="number" name="delay" required />
+            </label>
+
+            <fieldset class="fieldset-state">
+                <legend class="legend-state">State</legend>
+                <label>
+                    <input class="input-fulfilled" type="radio" name="state" value="fulfilled" required />
+                    Fulfilled
+                </label>
+                <label>
+                    <input class="input-rejected" type="radio" name="state" value="rejected" required />
+                    Rejected
+                </label>
+            </fieldset>
+
+            <button type="submit" class="btn-create">Create notification</button>
+        </form>
+
+        <script type="module" src="./js/2-snackbar.js"></script>
+    </main>
+</body>
+</html>
