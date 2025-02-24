@@ -16,17 +16,10 @@ export async function fetchImages(query) {
         safesearch: true
     };
 
-    console.log('Fetching images with params:', params);
-
     try {
         const response = await axios.get(BASE_URL, { params });
-        console.log('API Response:', response.data);
         return response.data.hits;
     } catch (error) {
-        console.error('Error fetching images:', error);
-        if (error.response) {
-            console.error('Response data:', error.response.data);
-        }
         throw error;
     }
 }

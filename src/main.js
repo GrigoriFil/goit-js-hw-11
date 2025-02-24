@@ -31,13 +31,16 @@ form.addEventListener('submit', async (event) => {
 
         if (images.length === 0) {
             showError('Sorry, there are no images matching your search query. Please try again!');
+            iziToast.error({
+                title: 'Error',
+                message: 'No images found for your query!'
+            });
         } else {
             renderImages(images);
         }
     } catch (error) {
         hideLoader();
         console.error('Error fetching images:', error);
-
         showError('Failed to fetch images. Please check your request or try again later.');
         iziToast.error({
             title: 'Error',

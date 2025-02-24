@@ -1,6 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+let lightbox;
+
 export function renderImages(images) {
     const gallery = document.querySelector('.gallery');
     gallery.innerHTML = '';
@@ -21,7 +23,11 @@ export function renderImages(images) {
 
     gallery.insertAdjacentHTML('beforeend', markup);
 
-    new SimpleLightbox('.gallery a').refresh();
+    if (!lightbox) {
+        lightbox = new SimpleLightbox('.gallery a');
+    }
+
+    lightbox.refresh();
 }
 
 export function showError(message) {
